@@ -28,7 +28,7 @@ NR-versus-R logFC reference.
 library(SCARP)
 
 # Load the example data
-data(object, package = "SCARP")
+data(object)
 
 # Extract the RNA count matrix; counts preserve the within-cell expression ranks
 mat <- SeuratObject::LayerData(object, assay = "RNA", layer = "counts")
@@ -53,7 +53,7 @@ absolute deviation, and annotate genes of interest.
 library(SCARP)
 
 # Load the example data
-data(object, package = "SCARP")
+data(object)
 mat <- SeuratObject::LayerData(object, assay = "RNA", layer = "counts")
 
 # Compute scores (reuse res from the first example if already available)
@@ -85,10 +85,6 @@ Use `set.seed()` for reproducible scores.
   versus Response (R); positive values are associated with non-response.
 - `object`: 33,538 genes and 10,419 cells from pretreatment tumor samples of two
   patients, supplied from the Zhang Zemin single-cell dataset.
-
-Original inputs remain locally in `data/pre/`; the installable `.rda` datasets
-are included in the repository. Original article identifiers and processing
-parameters can be added when available.
 
 ## License
 
