@@ -1,0 +1,18 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.Rhistory$
+^\.RData$
+^\.Ruserdata$
+^\.idea$
+^\.git$
+^PRE$
+^data-raw$
+^README\.Rmd$
+^\.github$
+^cumulativeCurve_test\.pdf$
+
+^data/Nature_medicine NRvsR DEG logFC\.rda$
+^data/obj_zhang_sub\.rds$
+^validation$
+^SCARP.*\.tar\.gz$
+^data/pre$

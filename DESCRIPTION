@@ -1,0 +1,55 @@
+Package: SCARP
+Type: Package
+Title: Single-Cell Chemoresistance Assessment via Rank-Based Projection
+Version: 1.0
+Authors@R: c(person("Linxin", "Xie", email = "xielinxin0330@gmail.com",
+    role = c("aut", "cre")))
+Description: We developed a rank-based cumulative scoring algorithm, termed
+    SCARP, to quantify chemotherapy resistance at single-cell resolution in
+    colorectal cancer (CRC). Gene-specific log fold-change (logFC) values were
+    derived from differential expression analysis between chemotherapy
+    non-response (NR) and response (R) samples in a CRC chemotherapy-response
+    dataset and were incorporated into SCARP as a reference chemoresistance
+    signature. Under the NR-versus-R contrast, positive logFC values represent
+    genes preferentially expressed in non-response samples, whereas negative
+    logFC values represent genes preferentially expressed in response samples.
+    .
+    For each cell, genes were ranked according to their normalized expression
+    levels, and the corresponding gene-specific logFC values were cumulatively
+    summed along the ranked gene list. The cumulative deviation with the largest
+    absolute magnitude was defined as the observed score (MaxScore). To account
+    for expression-dependent background variation, TopN genes were randomly
+    sampled without replacement from the top 50% of matched genes ranked by mean
+    expression for 3,000 iterations. Sampled genes retained their
+    mean-expression rank order. The resulting empirical distribution was used to
+    estimate the background mean (Random_mean) and standard deviation
+    (Random_sd).
+    .
+    The observed score was standardized against this background and further
+    adjusted using a position weight (Pw), which emphasizes deviations arising
+    from highly ranked genes, and a direction strength term (Ds), which captures
+    the dominance of the non-response- or response-associated cumulative
+    trajectory. The final single-cell chemoresistance score was calculated as
+    (MaxScore - Random_mean) / Random_sd * Pw * Ds. The score measures signed
+    deviation relative to the empirical background. Higher scores indicate
+    greater association with the non-response signature relative to that
+    background. Its sign need not equal the sign of the unstandardized
+    cumulative deviation.
+URL: https://github.com/XLXhmu/SCARP
+BugReports: https://github.com/XLXhmu/SCARP/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+LazyDataCompression: xz
+Depends: R (>= 4.0.0)
+Imports:
+    data.table,
+    ggplot2 (>= 3.4.0),
+    ggrepel,
+    SeuratObject (>= 5.0.0),
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0

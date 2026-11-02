@@ -1,0 +1,17 @@
+# R session and IDE files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.idea/
+~$*.docx
+
+# Local checks and build artifacts
+/validation/
+/*.Rcheck/
+/SCARP_*.tar.gz
+
+# Original inputs; installable datasets are tracked in data/*.rda
+/data/obj_zhang_sub.rds
+/data/Nature_medicine NRvsR DEG logFC.rda
+/data/pre/
