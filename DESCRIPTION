@@ -13,7 +13,7 @@ Description: We developed a rank-based cumulative scoring algorithm, termed
     signature. Under the NR-versus-R contrast, positive logFC values represent
     genes preferentially expressed in non-response samples, whereas negative
     logFC values represent genes preferentially expressed in response samples.
-
+    .
     For each cell, genes were ranked according to their normalized expression
     levels, and the corresponding gene-specific logFC values were cumulatively
     summed along the ranked gene list. The cumulative deviation with the largest
@@ -24,7 +24,7 @@ Description: We developed a rank-based cumulative scoring algorithm, termed
     mean-expression rank order. The resulting empirical distribution was used to
     estimate the background mean (Random_mean) and standard deviation
     (Random_sd).
-
+    .
     The observed score was standardized against this background and further
     adjusted using a position weight (Pw), which emphasizes deviations arising
     from highly ranked genes, and a direction strength term (Ds), which captures
